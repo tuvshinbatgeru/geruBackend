@@ -1,5 +1,5 @@
 <?php
-
+use Response;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,4 +13,11 @@
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/user/{user}', function(User $user) {
+	return Response::json([
+		'code' => 0,
+		'result' => $user,
+	]);
 });
