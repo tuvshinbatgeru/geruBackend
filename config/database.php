@@ -1,11 +1,11 @@
 <?php
 
-$url = parse_url(getenv("DATABASE_URL"));
+/*$url = parse_url(getenv("DATABASE_URL"));
 
 $host = $url["host"];
 $username = $url["user"];
 $password = $url["pass"];
-$database = substr($url["path"], 1);
+$database = substr($url["path"], 1);*/
 
 return [
 
@@ -48,7 +48,7 @@ return [
 
         'mysql' => [
             'driver' => 'mysql',
-            'host' => env('DB_HOST', '127.0.0.1'),
+            'host' => env('DB_HOST', '127..0.1'),
             'port' => env('DB_PORT', '3306'),
             'database' => env('DB_DATABASE', 'forge'),
             'username' => env('DB_USERNAME', 'forge'),
@@ -61,11 +61,11 @@ return [
         ],
 
         'pgsql' => [
-            'driver'   => 'pgsql',
+            /*'driver'   => 'pgsql',
             'host'     => $host,
             'database' => $database,
             'username' => $username,
-            'password' => $password,
+            'password' => $password,*/
             'charset'  => 'utf8',
             'prefix'   => '',
             'schema'   => 'public',

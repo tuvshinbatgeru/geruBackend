@@ -18,5 +18,9 @@ use Illuminate\Http\Request;
 		return $request->user();
 	});
 
+	
 	Route::resource('project', 'ProjectController');
+
+	Route::post('tag/mobile', 'TagController@tags');
+	Route::resource('tag', 'TagController');
 //});

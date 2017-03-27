@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateFixedProjectsTable extends Migration
+class CreateTagTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class CreateFixedProjectsTable extends Migration
      */
     public function up()
     {
-        Schema::create('fixed_projects', function (Blueprint $table) {
+        Schema::create('tag', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('type'); //0 custom 0 < other 
-            $table->string('unit'); //MNT, USD etc
-            $table->decimal('min_amount', 18, 0);
-            $table->decimal('max_amount', 18, 0);
+            $table->string('name');
+            $table->string('icon');
+            $table->enum('type', ['A', 'N'])->default('N');
             $table->timestamps();
         });
     }
@@ -30,6 +29,6 @@ class CreateFixedProjectsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('fixed_projects');
+        Schema::dropIfExists('tag');
     }
 }

@@ -18,6 +18,7 @@ class CreateSkillTable extends Migration
             $table->integer('category_id')->unsigned()->index();
             $table->string('name');
             $table->string('icon');
+            $table->string('verb');
             $table->timestamps();
         });
     }

@@ -16,7 +16,7 @@ class CreateProjectFilesTable extends Migration
         Schema::create('project_files', function (Blueprint $table) {
             $table->integer('file_id')->unsigned()->index();
             $table->integer('project_id')->unsigned()->index();
-            $table->string('file_type')->default('photo');
+            $table->string('file_type')->default('photo'); //photo, collage, etc
             $table->timestamps();
         });
     }

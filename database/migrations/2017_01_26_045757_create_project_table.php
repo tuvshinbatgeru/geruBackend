@@ -24,10 +24,7 @@ class CreateProjectTable extends Migration
 
             $table->enum('duration_type', ['hour', 'day', 'month'])->default('day');
             $table->tinyInteger('duration_length');
-            //$table->string('unit');
-            //$table->decimal('min_amount', 18, 0);
-            //$table->decimal('max_amount', 18, 0);
-            $table->string('status');
+            $table->string('status'); //available
             
             $table->timestamps();
         });

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateBidMilestonesTable extends Migration
+class CreateShowcaseTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateBidMilestonesTable extends Migration
      */
     public function up()
     {
-        Schema::create('bid_milestones', function (Blueprint $table) {
-            $table->integer('bid_id')->unsigned()->index();
-            $table->string('title');
-            $table->decimal('amount', 18, 0);
-            $table->integer('view_order');
+        Schema::create('showcase', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('caption');
+            $table->decimal('price', 18, 0);
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ class CreateBidMilestonesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bid_milestones');
+        Schema::dropIfExists('showcase');
     }
 }

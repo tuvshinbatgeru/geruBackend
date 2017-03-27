@@ -14,6 +14,7 @@ require('./bootstrap');
  */
 
 Vue.component('example', require('./components/Example.vue'));
+Vue.component('tag-list', require('./components/TagList.vue'));
 
 const app = new Vue({
     el: '#app'

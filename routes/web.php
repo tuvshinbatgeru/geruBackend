@@ -22,3 +22,7 @@ Route::get('/user/{user}', function(User $user) {
 		'result' => $user,
 	]);
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');

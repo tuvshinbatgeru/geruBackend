@@ -15,9 +15,8 @@ class CreatePhotoTable extends Migration
     {
         Schema::create('photo', function (Blueprint $table) {
             $table->increments('id');
-            $table->enum('type',['S' , 'M', 'L', 'O'])->default('S');
             $table->string('extention');
-            $table->string('url');
+            
             $table->timestamps();
         });
     }

@@ -17,7 +17,11 @@ class CreateProjectBidsTable extends Migration
             $table->increments('id');
             $table->integer('project_id')->unsigned()->index();
             $table->integer('user_id')->unsigned()->index();
+            $table->tinyInteger('charge_id')->default(0); //0 - Энгийн, 1 - Онцлосон 2 - Тухайн нтр
             $table->text('proposal');
+            $table->decimal('price', 18, 0);
+            $table->enum('duration_type', ['hour', 'day', 'month'])->default('day');
+            $table->tinyInteger('duration_length');
             $table->timestamp('bid_time');
         });
     }
